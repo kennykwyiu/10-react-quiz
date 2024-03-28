@@ -88,6 +88,7 @@ export default function App() {
             <NextButton dispatch={dispatch} answer={answer} />
           </>
         )}
+        {/* {status==="finished" && <Finish} */}
       </Main>
     </div>
   );
