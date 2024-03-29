@@ -29,7 +29,6 @@ function reducer(state, action) {
       return { ...state, status: "active" };
     case "newAnswer":
       const question = state.questions.at(state.index);
-
       return {
         ...state,
         answer: action.payload,
@@ -40,6 +39,8 @@ function reducer(state, action) {
       };
     case "nextQuestion":
       return { ...state, index: state.index + 1, answer: null };
+    case "finish":
+      return { ...state, status: "finished" };
     default:
       throw new Error("Action unknow");
   }
@@ -86,7 +87,12 @@ export default function App() {
               dispatch={dispatch}
               answer={answer}
             />
-            <NextButton dispatch={dispatch} answer={answer} />
+            <NextButton
+              dispatch={dispatch}
+              answer={answer}
+              index={index}
+              numQuestions={numQuestions}
+            />
           </>
         )}
         {status === "finished" && (
