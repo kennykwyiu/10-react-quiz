@@ -86,12 +86,7 @@ export default function App() {
             <Question />
             <Footer>
               <Timer />
-              <NextButton
-                dispatch={dispatch}
-                answer={answer}
-                index={index}
-                numQuestions={numQuestions}
-              />
+              <NextButton />
             </Footer>
           </>
         )}
