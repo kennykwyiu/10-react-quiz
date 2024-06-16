@@ -85,7 +85,7 @@ export default function App() {
             <Progress />
             <Question />
             <Footer>
-              <Timer dispatch={dispatch} secondsRemaining={secondsRemaining} />
+              <Timer />
               <NextButton
                 dispatch={dispatch}
                 answer={answer}
